@@ -1,0 +1,10 @@
+<% @page_title = "レース 新規登録" %>
+<h1><%= @page_title %><h1>
+
+<div class="container">
+<%= form_for @race do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit "登録", class: "btn btn-default btn-warning" %></p>
+<% end %>
+<%= link_to '戻る', races_path , class: "btn btn-default btn-primary" %>
+</div>	

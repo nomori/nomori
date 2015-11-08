@@ -1,0 +1,18 @@
+	<table class="table table-striped table-borderd">
+		<tr>
+			<th><%= form.label :race_name, "レース名" %></th>
+			<td><%= form.collection_select :race_id, @race, :id, :race_name %></td>
+		</tr>
+		<tr>
+			<th><%= form.label :horse_name, "馬名" %></th>
+			<td><%= form.collection_select :uma_id, @uma, :id, :horse_name %></td>
+		</tr>
+		<tr>
+			<th><%= form.label :race_result, "着順" %></th>
+			<td><%= form.text_field :race_result %></td>
+		</tr>
+		<tr>
+			<th><%= form.label :race_date, "レース日" %></th>
+			<td><%= form.date_select :race_date, start_year: 1900, end_year: 2100, use_month_numbers: true %></td>
+		</tr>
+	</table>

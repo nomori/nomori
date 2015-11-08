@@ -1,0 +1,27 @@
+<% @page_title = "レース 新規登録" %>
+<h1><%= @page_title %><h1>
+
+<div class="container">
+<%= form_for @raceresult do |form| %>
+	<table class="table table-striped table-borderd">
+		<tr>
+			<th><%= form.label :race_name, "レース名" %></th>
+			<td><%= form.text_field :race_name, value: @raceresult.race.race_name, :readonly => true %></td>
+		</tr>
+		<tr>
+			<th><%= form.label :horse_name, "馬名" %></th>
+			<td><%= form.text_field :horce_name, value: @raceresult.uma.horse_name, :readonly => true %></td>
+		</tr>
+		<tr>
+			<th><%= form.label :race_result, "着順" %></th>
+			<td><%= form.text_field :race_result %></td>
+		</tr>
+		<tr>
+			<th><%= form.label :race_date, "レース日" %></th>
+			<td><%= form.date_select :race_date, start_year: 1900, end_year: 2100, use_month_numbers: true %></td>
+		</tr>
+	</table>
+<p><%= form.submit "更新", class: "btn btn-default btn-warning" %></p>
+<% end %>
+<%= link_to '戻る', races_path , class: "btn btn-default btn-primary" %>
+</div>	
